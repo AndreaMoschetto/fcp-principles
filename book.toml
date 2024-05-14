@@ -1,0 +1,6 @@
+[book]
+authors = ["AndreaMoschetto"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Functional and Concurrent Programming Principles"
