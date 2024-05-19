@@ -4,8 +4,8 @@
 
 # Appunti
 
-- [Elementi di dimostrazione per induzione](./induction.md)
-- [Curryfing]()
+- [Definizione ricorsiva sui naturali](./recursion.md)
+- [Curryficazione]()
 - [Pattern matching]()
 - [Tipi e specifiche parziali]()
 - [Lambda calcolo tipato semplice]()
