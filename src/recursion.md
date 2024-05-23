@@ -7,12 +7,12 @@ Definendoli tutti in funzione del primo elemento iterando una procedura di gener
 \\[0, S(0), S(S(0)), \dots\\]  
 
 Possiamo definirli per ricorsione nel seguente modo:  
->_L'insieme dei numeri naturali (indicato con \\(\mathbb{N}\\)) si definisce come il più piccolo insieme tale che:_   
->\\(n \in \mathbb{N}\\) _se:_
->- \\(n = 0\\)
->- \\(n = S(x-1)\\)
+> _L'insieme dei numeri naturali (indicato con \\(\mathbb{N}\\)) si definisce come il più piccolo insieme tale che:_   
+> \\(n \in \mathbb{N}\\) _se:_
+> - \\(n = 0\\)
+> - \\(n = S(x-1)\\)
 >
->_dove \\(S\\) rappresenta la funzione **successore**._  
+> _dove \\(S\\) rappresenta la funzione **successore**._  
 
 NB. "il più piccolo insieme tale che" è un sinonimo di "tutti e soli gli elementi tali che"
 
