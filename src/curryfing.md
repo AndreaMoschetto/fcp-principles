@@ -30,7 +30,7 @@ Per quanto sembri controintuitivo all'inizio, la curryficazione aggiunge solo es
 Per questo motivo in \\(\lambda\\)-calcolo scriviamo soltanto funzioni con un solo argomento.
 > **N.B.**  
 > Quando si vedono \\(\lambda\\)-termini come \\(\lambda x.y.zxy\\)  
-> è solo una abbreviazione di \\(\lambda x. \lambda y. zxy\\).  
+> è solo una abbreviazione di \\(\lambda x. \lambda y. zxy\\)  
 
 E dato che Haskel implementa il modello computazionale del \\(\lambda\\)-calcolo, la funzione somma viene applicata come segue  
 ```
