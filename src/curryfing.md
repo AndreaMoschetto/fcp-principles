@@ -36,4 +36,11 @@ E dato che Haskel implementa il modello computazionale del \\(\lambda\\)-calcolo
 ```
 sum 3 5
 ```
-senza l'ausilio di parentesi, dal momento in cui *in haskel ogni funzione è currificata*
+senza l'ausilio di parentesi, dal momento in cui *in haskel ogni funzione è currificata*  
+## Nota sulle funzioni di ordine superiore
+Quando parliamo di funzioni che prendono come argomento o restituiscono altre funzioni, vi si fa riferimento col termine **funzioni di ordine superiore**.  
+> Ad esempio la funzione *atzero* che prende una funzione come argomento e restituisce l'applicazione di quella funzione a zero.  
+> ``` atzero f = f 0 ```  
+> Oppure la funzione compose che prende due funzioni (sempre in versione curryficata) e ne restituisce la composizione  
+>  ``` compose f g = f g ```  
+> 
