@@ -16,7 +16,7 @@ Possiamo definirli per ricorsione nel seguente modo:
 
 NB. "il più piccolo insieme tale che" è un sinonimo di "tutti e soli gli elementi tali che"
 
-## Definire funzioni a valori in \\(\mathbb{N}\\)
+## Definire funzioni su \\(\mathbb{N}\\)
 Tornando al topic di questo capitolo, una funzione \\(f\\) sull'insieme dei naturali può essere elegantemente definirla per ricorsione sull'elemento base di \\(\mathbb{N}\\) e sul suo elemento generico (o induttivo).  
 
 Scrivendo in Haskell abbiamo bisogno di :
