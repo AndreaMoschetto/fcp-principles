@@ -1,5 +1,6 @@
 # Definizione ricorsiva sui naturali
-Volendo definire funzioni sui numeri naturali, è di nostro interesse vedere come l'insieme dei numeri naturali sia definito.
+Una nota da non poco che voglio appuntare come primo capitolo riguarda una semplice quanto efficace accortezza nel modo di pensare una definizione di funzione.  
+Volendo definire funzioni sui numeri naturali, è di nostro interesse vedere intanto come questo insieme più semplice sia definito.
 ## Reminder sui numeri naturali 
 Intuitivamente possiamo vedere i naturali disposti su una semiretta secondo una relazione di ordinamento, da 0 a \\(+\infty\\).  
 Definendoli tutti in funzione del primo elemento iterando una procedura di generazione (la funzione *successore*) si ottiene una sequenza del tipo:  
@@ -10,16 +11,16 @@ Possiamo definirli per ricorsione nel seguente modo:
 > _L'insieme dei numeri naturali (indicato con \\(\mathbb{N}\\)) si definisce come il più piccolo insieme tale che:_   
 > \\(n \in \mathbb{N}\\) _se:_
 > - \\(n = 0\\)
-> - \\(n = S(x-1)\\)
+> - \\(n = S(n-1)\\)
 >
 > _dove \\(S\\) rappresenta la funzione **successore**._  
 
 NB. "il più piccolo insieme tale che" è un sinonimo di "tutti e soli gli elementi tali che"
 
 ## Definire funzioni su \\(\mathbb{N}\\)
-Tornando al topic di questo capitolo, una funzione \\(f\\) sull'insieme dei naturali può essere elegantemente definirla per ricorsione sull'elemento base di \\(\mathbb{N}\\) e sul suo elemento generico (o induttivo).  
+Torniamo al topic di questo capitolo: dato che i naturali sono definiti in termini di elemento base e elemento generico, allora una funzione \\(f\\) sull'insieme dei naturali può essere elegantemente definita per ricorsione sull'elemento base di \\(\mathbb{N}\\) e sull'elemento generico di \\(\mathbb{N}\\).  
 
-Scrivendo in Haskell abbiamo bisogno di :
+Parlando di Haskell abbiamo delineato tre elementi principali per definire qualcosa per ricorsione:
 - Denotare l'oggetto di base 
 - Denotare un costruttore
 - Decomporre oggetti composti
