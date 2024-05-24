@@ -181,6 +181,14 @@ Quando si vedono \(\lambda\)-termini come \(\lambda x.y.zxy\)<br />
 <pre><code>sum 3 5
 </code></pre>
 <p>senza l'ausilio di parentesi, dal momento in cui <em>in haskel ogni funzione è currificata</em></p>
+<h2 id="nota-sulle-funzioni-di-ordine-superiore"><a class="header" href="#nota-sulle-funzioni-di-ordine-superiore">Nota sulle funzioni di ordine superiore</a></h2>
+<p>Quando parliamo di funzioni che prendono come argomento o restituiscono altre funzioni, vi si fa riferimento col termine <strong>funzioni di ordine superiore</strong>.</p>
+<blockquote>
+<p>Ad esempio la funzione <em>atzero</em> che prende una funzione come argomento e restituisce l'applicazione di quella funzione a zero.<br />
+<code>atzero f = f 0</code><br />
+Oppure la funzione compose che prende due funzioni (sempre in versione curryficata) e ne restituisce la composizione<br />
+<code>compose f g = f g</code></p>
+</blockquote>
 
                     </main>
 

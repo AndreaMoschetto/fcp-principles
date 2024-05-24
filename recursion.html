@@ -187,9 +187,10 @@ len(l)=
 1+len( tail(l)) &amp; \text{altrimenti}
 \end{cases}<br />
 \]</p>
-<p>e rappresentarla in haskel come:<br />
-<code> len l = if(null l) then 0 else 1 + (len (tail l))</code><br />
-dove <em>null</em> è una funzione che da valore di verità positivo se il suo argomento è una lista vuota.</p>
+<p>e rappresentarla in haskel come:</p>
+<pre><code class="language-haskell">len l = if(null l) then 0 else 1 + (len (tail l))
+</code></pre>
+<p>dove <em>null</em> è una funzione che da valore di verità positivo se il suo argomento è una lista vuota.</p>
 
                     </main>
 

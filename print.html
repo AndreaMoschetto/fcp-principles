@@ -192,9 +192,10 @@ len(l)=
 1+len( tail(l)) &amp; \text{altrimenti}
 \end{cases}<br />
 \]</p>
-<p>e rappresentarla in haskel come:<br />
-<code> len l = if(null l) then 0 else 1 + (len (tail l))</code><br />
-dove <em>null</em> è una funzione che da valore di verità positivo se il suo argomento è una lista vuota.</p>
+<p>e rappresentarla in haskel come:</p>
+<pre><code class="language-haskell">len l = if(null l) then 0 else 1 + (len (tail l))
+</code></pre>
+<p>dove <em>null</em> è una funzione che da valore di verità positivo se il suo argomento è una lista vuota.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="curryficazione"><a class="header" href="#curryficazione">Curryficazione</a></h1>
 <p>La curryficazione è una trasformazione da una funzione:<br />
 \[f:(A_1,\dots,A_n)\rightarrow B\]<br />
@@ -231,6 +232,14 @@ Quando si vedono \(\lambda\)-termini come \(\lambda x.y.zxy\)<br />
 <pre><code>sum 3 5
 </code></pre>
 <p>senza l'ausilio di parentesi, dal momento in cui <em>in haskel ogni funzione è currificata</em></p>
+<h2 id="nota-sulle-funzioni-di-ordine-superiore"><a class="header" href="#nota-sulle-funzioni-di-ordine-superiore">Nota sulle funzioni di ordine superiore</a></h2>
+<p>Quando parliamo di funzioni che prendono come argomento o restituiscono altre funzioni, vi si fa riferimento col termine <strong>funzioni di ordine superiore</strong>.</p>
+<blockquote>
+<p>Ad esempio la funzione <em>atzero</em> che prende una funzione come argomento e restituisce l'applicazione di quella funzione a zero.<br />
+<code>atzero f = f 0</code><br />
+Oppure la funzione compose che prende due funzioni (sempre in versione curryficata) e ne restituisce la composizione<br />
+<code>compose f g = f g</code></p>
+</blockquote>
 
                     </main>
 
