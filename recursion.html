@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html" class="active"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Curryficazione</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Pattern matching</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Tipi e specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Lambda calcolo tipato semplice</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Principal pair</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Programmazione concorrente</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> SePi</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Proprietà dei sistemi concorrenti</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Model checking</div></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html" class="active"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><a href="curryfing.html"><strong aria-hidden="true">2.</strong> Curryficazione</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Pattern matching</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Tipi e specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Lambda calcolo tipato semplice</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Principal pair</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Programmazione concorrente</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> SePi</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Proprietà dei sistemi concorrenti</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Model checking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Teorema di Knaster Tarsky</div></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -146,7 +146,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="definizione-ricorsiva-sui-naturali"><a class="header" href="#definizione-ricorsiva-sui-naturali">Definizione ricorsiva sui naturali</a></h1>
-<p>Volendo definire funzioni sui numeri naturali, è di nostro interesse vedere come l'insieme dei numeri naturali sia definito.</p>
+<p>Una nota non da poco che voglio appuntare come primo capitolo riguarda una semplice quanto efficace accortezza nel modo di pensare una definizione di funzione.<br />
+Volendo definire funzioni sui numeri naturali, è di nostro interesse vedere intanto come questo insieme più semplice sia definito.</p>
 <h2 id="reminder-sui-numeri-naturali"><a class="header" href="#reminder-sui-numeri-naturali">Reminder sui numeri naturali</a></h2>
 <p>Intuitivamente possiamo vedere i naturali disposti su una semiretta secondo una relazione di ordinamento, da 0 a \(+\infty\).<br />
 Definendoli tutti in funzione del primo elemento iterando una procedura di generazione (la funzione <em>successore</em>) si ottiene una sequenza del tipo:</p>
@@ -157,14 +158,14 @@ Definendoli tutti in funzione del primo elemento iterando una procedura di gener
 \(n \in \mathbb{N}\) <em>se:</em></p>
 <ul>
 <li>\(n = 0\)</li>
-<li>\(n = S(x-1)\)</li>
+<li>\(n = S(n-1)\)</li>
 </ul>
 <p><em>dove \(S\) rappresenta la funzione <strong>successore</strong>.</em></p>
 </blockquote>
 <p>NB. &quot;il più piccolo insieme tale che&quot; è un sinonimo di &quot;tutti e soli gli elementi tali che&quot;</p>
-<h2 id="definire-funzioni-a-valori-in-mathbbn"><a class="header" href="#definire-funzioni-a-valori-in-mathbbn">Definire funzioni a valori in \(\mathbb{N}\)</a></h2>
-<p>Tornando al topic di questo capitolo, una funzione \(f\) sull'insieme dei naturali può essere elegantemente definirla per ricorsione sull'elemento base di \(\mathbb{N}\) e sul suo elemento generico (o induttivo).</p>
-<p>Scrivendo in Haskell abbiamo bisogno di :</p>
+<h2 id="definire-funzioni-su-mathbbn"><a class="header" href="#definire-funzioni-su-mathbbn">Definire funzioni su \(\mathbb{N}\)</a></h2>
+<p>Torniamo al topic di questo capitolo: dato che i naturali sono definiti in termini di elemento base e elemento generico, allora una funzione \(f\) sull'insieme dei naturali può essere elegantemente definita per ricorsione sull'elemento base di \(\mathbb{N}\) e sull'elemento generico di \(\mathbb{N}\).</p>
+<p>Parlando di Haskell abbiamo delineato tre elementi principali per definire qualcosa per ricorsione:</p>
 <ul>
 <li>Denotare l'oggetto di base </li>
 <li>Denotare un costruttore</li>
@@ -198,6 +199,9 @@ dove <em>null</em> è una funzione che da valore di verità positivo se il suo a
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
+                                                    <a rel="next" href="curryfing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -209,6 +213,9 @@ dove <em>null</em> è una funzione che da valore di verità positivo se il suo a
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
+                                    <a rel="next" href="curryfing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
