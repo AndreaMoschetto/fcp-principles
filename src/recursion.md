@@ -40,7 +40,9 @@ Volendo definire la funzione *len* che presa una lista ne restituisca la sua lun
 \\]
 
 e rappresentarla in haskel come:  
-``` len l = if(null l) then 0 else 1 + (len (tail l))```  
+```haskell
+len l = if(null l) then 0 else 1 + (len (tail l))
+```  
 dove *null* è una funzione che da valore di verità positivo se il suo argomento è una lista vuota.  
 
 
