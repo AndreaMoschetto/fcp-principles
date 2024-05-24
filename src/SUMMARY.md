@@ -5,7 +5,7 @@
 # Appunti
 
 - [Definizione ricorsiva sui naturali](./recursion.md)
-- [Curryficazione]()
+- [Curryficazione](./curryfing.md)
 - [Pattern matching]()
 - [Tipi e specifiche parziali]()
 - [Lambda calcolo tipato semplice]()
@@ -17,3 +17,4 @@
 - [SePi]()
 - [Proprietà dei sistemi concorrenti]()
 - [Model checking]()
+- [Teorema di Knaster Tarsky]()
