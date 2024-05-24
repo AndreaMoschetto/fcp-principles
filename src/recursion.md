@@ -1,5 +1,5 @@
 # Definizione ricorsiva sui naturali
-Una nota da non poco che voglio appuntare come primo capitolo riguarda una semplice quanto efficace accortezza nel modo di pensare una definizione di funzione.  
+Una nota non da poco che voglio appuntare come primo capitolo riguarda una semplice quanto efficace accortezza nel modo di pensare una definizione di funzione.  
 Volendo definire funzioni sui numeri naturali, è di nostro interesse vedere intanto come questo insieme più semplice sia definito.
 ## Reminder sui numeri naturali 
 Intuitivamente possiamo vedere i naturali disposti su una semiretta secondo una relazione di ordinamento, da 0 a \\(+\infty\\).  
