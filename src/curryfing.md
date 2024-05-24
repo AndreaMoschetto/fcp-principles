@@ -8,7 +8,7 @@ a una funzione
 Questa è una delle prime cose che ci si sente dire quando si impara il \\(\lambda\\)-calcolo.  
 Vediamo intanto di capire praticamente cosa significa che una funzione sia curryficata.  
 Prendiamo in considerazione una funzione  
-\\[sum:\mathbb{N}x\mathbb{N} \rightarrow \mathbb{N}\\]  
+\\[sum:\mathbb{N}\times\mathbb{N} \rightarrow \mathbb{N}\\]  
 che prende come argomento due naturali e ne restituisce la somma.
 La sua versione curryficata sarà  
 \\[sum_c:\mathbb{N} \rightarrow \mathbb{N} \rightarrow \mathbb{N}\\]  
