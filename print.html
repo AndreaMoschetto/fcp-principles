@@ -271,7 +271,7 @@ Allo stesso modo possiamo rappresentarlo in haskell e utilizzarlo tramite patter
 <pre><code class="language-haskell">data BTint = EmptyT | MkT Int BTint BTint
 </code></pre>
 <p>Con <code>MkT</code> chiamiamo quello che sarà il costruttore del nostro albero.<br />
-Mentre con <code>Empty</code> rappresentiamo l'albero vuoto
+Mentre con <code>Empty</code> rappresentiamo l'albero vuoto.<br />
 Vediamo un esempio di funzione che prende come argomento questo albero e restituisce la somma delle etichette.</p>
 <pre><code class="language-haskell">sumT EmptyT = 0
 sumT (MkT n bt1 bt2) = n + (sumT bt1) + (sumT bt2)
