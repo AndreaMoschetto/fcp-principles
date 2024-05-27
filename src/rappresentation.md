@@ -1,6 +1,6 @@
 # Rappresentazione di Oggetti
 
-<img src="/img/magritte.jpg" alt="Picture" style="display: block; margin: 0 auto" />  
+<img src="img/magritte.jpg" alt="Picture" style="display: block; margin: 0 auto" />  
 
 *“separare scrupolosamente, crudelmente, l’elemento grafico dall’elemento plastico: se ad essi accade di trovarsi sovrapposti all’interno del quadro, come una didascalia e la sua immagine, è a condizione che l’enunciato contesti l’identità esplicita della figura e il nome che si è pronti a darle”.   - René Magritte (1898-1967)*  
   
@@ -33,7 +33,8 @@ La potenza di un linguaggio funzionale come haskell è quella di rappresentare \
 
 Immaginiamo un albero binario etichettato. 
 Può essere definito formalmente per ricorsione come un nodo con un'etichetta collegato a due alberi binari etichettati.  
-<img src="/img/trees.png" alt="Picture" style="display: block; margin: 0 auto" />  
+
+<img src="img/trees.png" alt="Picture" style="display: block; margin: 0 auto" />  
 Allo stesso modo possiamo rappresentarlo in haskell e utilizzarlo tramite pattern matching nel seguente modo  
 
 ```haskell
