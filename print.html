@@ -241,7 +241,7 @@ Oppure la funzione compose che prende due funzioni (sempre in versione curryfica
 <code>compose f g = f g</code></p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rappresentazione-di-oggetti"><a class="header" href="#rappresentazione-di-oggetti">Rappresentazione di Oggetti</a></h1>
-<img src="/img/magritte.jpg" alt="Picture" style="display: block; margin: 0 auto" />  
+<img src="img/magritte.jpg" alt="Picture" style="display: block; margin: 0 auto" />  
 <p><em>“separare scrupolosamente, crudelmente, l’elemento grafico dall’elemento plastico: se ad essi accade di trovarsi sovrapposti all’interno del quadro, come una didascalia e la sua immagine, è a condizione che l’enunciato contesti l’identità esplicita della figura e il nome che si è pronti a darle”.   - René Magritte (1898-1967)</em></p>
 <p>Un concetto chiave quando si parla di formalismi matematici e linguaggi di programmazione è la differenziazione tra l'oggetto che si vuole rappresentare e la rappresentazione dello stesso.<br />
 Cosa vedete in questo quadro? Se avete risposto una pipa avete sbagliato, questa è la rappresentazione di una pipa.<br />
@@ -265,9 +265,9 @@ somma [n:ns] = n + somma ns
 vedremo una definizione formale di pattern matching nel capitolo sintetico sul \(\lambda\)-calcolo.</p>
 </blockquote>
 <p>Immaginiamo un albero binario etichettato. 
-Può essere definito formalmente per ricorsione come un nodo con un'etichetta collegato a due alberi binari etichettati.<br />
-<img src="/img/trees.png" alt="Picture" style="display: block; margin: 0 auto" /><br />
-Allo stesso modo possiamo rappresentarlo in haskell e utilizzarlo tramite pattern matching nel seguente modo</p>
+Può essere definito formalmente per ricorsione come un nodo con un'etichetta collegato a due alberi binari etichettati.</p>
+<img src="img/trees.png" alt="Picture" style="display: block; margin: 0 auto" />  
+Allo stesso modo possiamo rappresentarlo in haskell e utilizzarlo tramite pattern matching nel seguente modo  
 <pre><code class="language-haskell">data BTint = EmptyT | MkT Int BTint BTint
 </code></pre>
 <p>Con <code>MkT</code> chiamiamo quello che sarà il costruttore del nostro albero.<br />
