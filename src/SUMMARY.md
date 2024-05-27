@@ -6,7 +6,7 @@
 
 - [Definizione ricorsiva sui naturali](./recursion.md)
 - [Curryficazione](./curryfing.md)
-- [Pattern matching]()
+- [Rappresentazione di oggetti](./rappresentation.md)
 - [Tipi e specifiche parziali]()
 - [Lambda calcolo tipato semplice]()
 - [Principal pair]()
