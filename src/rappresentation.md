@@ -41,7 +41,7 @@ Allo stesso modo possiamo rappresentarlo in haskell e utilizzarlo tramite patter
 data BTint = EmptyT | MkT Int BTint BTint
 ```
 Con ```MkT``` chiamiamo quello che sarà il costruttore del nostro albero.  
-Mentre con ```Empty``` rappresentiamo l'albero vuoto
+Mentre con ```Empty``` rappresentiamo l'albero vuoto.  
 Vediamo un esempio di funzione che prende come argomento questo albero e restituisce la somma delle etichette.  
 
 ```haskell
