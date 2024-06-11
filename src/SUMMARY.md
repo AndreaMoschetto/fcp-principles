@@ -19,3 +19,5 @@
 - [Model checking]()
 - [Teorema di Knaster Tarsky]()
 - [Strong Bisimulation]()
+- [Programmazione Distribuita]()
+- [Reti di Petri]()
