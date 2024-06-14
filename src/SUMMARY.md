@@ -8,7 +8,7 @@
 - [Curryficazione](./curryfing.md)
 - [Rappresentazione di oggetti](./rappresentation.md)
 - [Ripasso sul lambda calcolo](./lambda.md)
-  - [Strategie di riduzione]()
+  - [Strategie di riduzione](./reduction.md)
   - [Teorema di Confluenza]()
   - [Tipi come specifiche parziali]()
   - [Principal pair]()
