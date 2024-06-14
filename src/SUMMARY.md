@@ -7,7 +7,7 @@
 - [Definizione ricorsiva sui naturali](./recursion.md)
 - [Curryficazione](./curryfing.md)
 - [Rappresentazione di oggetti](./rappresentation.md)
-- [Lambda calcolo in sintesi]()
+- [Ripasso sul lambda calcolo](./lambda.md)
   - [Strategie di riduzione]()
   - [Teorema di Confluenza]()
   - [Tipi come specifiche parziali]()
