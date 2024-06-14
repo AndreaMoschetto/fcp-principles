@@ -78,7 +78,7 @@ Possiamo anche usare la sintassi:
 \\]
 per dire \\(P \rightarrow P_1 \rightarrow P_2 \rightarrow \dots \rightarrow P_k\\) con \\(M_k \equiv Q\\)  
 
-## Definizioni sulla Normalizzazione
+## Normalizzazione
 - Un \\(\lambda\\)-termine si dice **in forma normale** se non contiene nessun \\(\beta\\)-redex.  
 - Un termine \\(N\\) si dice **normalizzabile** se esiste un termine \\(Q\\) in forma normale tale che  
   \\[N \twoheadrightarrow Q\\]
