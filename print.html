@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><a href="curryfing.html"><strong aria-hidden="true">2.</strong> Curryficazione</a></li><li class="chapter-item expanded "><a href="rappresentation.html"><strong aria-hidden="true">3.</strong> Rappresentazione di oggetti</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">4.</strong> Ripasso sul lambda calcolo</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Strategie di riduzione</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Teorema di Confluenza</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Tipi come specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Principal pair</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Programmazione concorrente</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> SePi</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Proprietà dei sistemi concorrenti</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Model checking</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Teorema di Knaster Tarsky</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Strong Bisimulation</div></li><li class="chapter-item expanded affix "><li class="part-title">Cenni conclusivi</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Programmazione Distribuita</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Reti di Petri</div></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><a href="curryfing.html"><strong aria-hidden="true">2.</strong> Curryficazione</a></li><li class="chapter-item expanded "><a href="rappresentation.html"><strong aria-hidden="true">3.</strong> Rappresentazione di oggetti</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">4.</strong> Ripasso sul lambda calcolo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reduction.html"><strong aria-hidden="true">4.1.</strong> Strategie di riduzione</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Teorema di Confluenza</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Tipi come specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Principal pair</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Programmazione concorrente</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> SePi</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Proprietà dei sistemi concorrenti</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Model checking</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Teorema di Knaster Tarsky</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Strong Bisimulation</div></li><li class="chapter-item expanded affix "><li class="part-title">Cenni conclusivi</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Programmazione Distribuita</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Reti di Petri</div></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -375,6 +375,50 @@ Vediamo una implicazione interessante nel capitolo sulle strategie di riduzione<
 <ul>
 <li><a href="https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm">Short Introduction to Functional Programming and Lambda-calculus</a> by Franco Barbanera</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strategie-di-riduzione"><a class="header" href="#strategie-di-riduzione">Strategie di riduzione</a></h1>
+<p>Possiamo vedere una strategia di riduzione come una regola che disciplina la scelta di quale \(\beta\)-redex ridurre prima e quale dopo.
+Ogni linguaggio di programmazione funzionale può essere caratterizzato da una strategia di riduzione differente.
+Possiamo individuare due macro-famiglie: <strong>call-by-value</strong> e <strong>call-by-name</strong></p>
+<h2 id="call-by-value"><a class="header" href="#call-by-value">Call-by-value</a></h2>
+<p>Questa strategia prevede che un \(\beta\)-redex possa essere ridotto solo se il suo argomento è un <em>valore</em>.
+Non ci curiamo adesso di definire cosa sia un <em>valore</em> proprio per mantenere un certo grado di genericità.
+Ponendo ad esempio per <em>valore</em> un qualunque termine in forma normale, possiamo dire che nel seguente termine:<br />
+\[
+((\lambda x.x)((\underline{\lambda y.y)z})) (\lambda x.xx)(\lambda z.z)
+\]
+ridurre con una strategia call-by-value significa scegliere per primo il termine sottolineato, perchè è l'unico in forma normale.</p>
+<blockquote>
+<p>N.B.
+Sottolineo ancora che la definizione di valore può essere diversa in base al linguaggio.<br />
+Scheme (un famoso linguaggio funzionale), ad esempio, considera anche una funzione come un valore.</p>
+</blockquote>
+<h2 id="call-by-name"><a class="header" href="#call-by-name">Call-by-name</a></h2>
+<p>Questa famiglia racchiude tutte le altre strategie, ovvero quelle che riducono un \(\beta\)-redex senza controllare se il suo argomento sia un valore o no.<br />
+Due note strategie call-by-name sono:</p>
+<ul>
+<li><strong>lazy strategy</strong> (chiamate anche <strong>call-by-need</strong>): che riducono un redex solo se strettamente necessario per valutare il valore finale;</li>
+<li><strong>leftmost-outermost</strong> (chiamate anche <strong>normal order</strong>): che come dice il nome provano a ridurre per primo il \(\beta\)-redex più esterno e più a sinistra.</li>
+</ul>
+<blockquote>
+<p><strong>Esempio di normal order strategy</strong>
+se consideriamo il termine:
+\[(\underline{(\lambda x.x)\lambda y.yy})((\lambda x.xx)z)\]
+una strategia normal order ridurrà per primo il termine sottolineato proprio perchè è tra i più esterni quello più a sinistra.</p>
+</blockquote>
+<h2 id="confronto-tra-strategie"><a class="header" href="#confronto-tra-strategie">Confronto tra strategie</a></h2>
+<p>Avevo detto che il nostro termine \(\Omega\) sarebbe servito.<br />
+Se un termine ha una forma normale ma è anche possibile ridurlo un numero infinito di volte, significa che possiede un sottotermine che non ha una forma normale. Ad esempio il termine<br />
+\[(\lambda x.z)\Omega\]
+Notiamo che, dato che \(\Omega\) riduce sempre in se stesso, solo una strategia che lo tratti &quot;per intero&quot; senza ridurlo potrà &quot;eliminarlo&quot; ottenendo:
+\[(\lambda x.z)\Omega \rightarrow z\]
+Fare questo significa usare una strategia call-by-name.<br />
+Se invece tentassimo di ridurre prima il termine \(\Omega\) per poi (immaginandolo possibile) applicarvi la funzione a sinistra, otterremmo una sequenza infinita del tipo:
+\[(\lambda x.z)\Omega \rightarrow (\lambda x.z)\Omega \rightarrow \dots\]
+Fare questo significa usare un strategia call-by-value.<br />
+In conclusione possiamo dire che seppur una call-by-name possa metterci un numero di riduzioni maggiore di una call-by-value a raggiungere una forma normale (ammesso che esista), essa ci garantisce sempre che venga raggiunta.
+Mentre invece, una sequenza di riduzioni call-by-value potrebbe raggiungere una forma normale più rapidamente come potrebbe divergere all'infinito senza mai trovarla.</p>
+<h2 id="teorema-di-standardizzazione"><a class="header" href="#teorema-di-standardizzazione">Teorema di Standardizzazione</a></h2>
+<p>Se un termine ha una forma normale essa sarà sempre raggiunta con una strategia di riduzione normal order.</p>
 
                     </main>
 
