@@ -91,4 +91,4 @@ per dire \\(P \rightarrow P_1 \rightarrow P_2 \rightarrow \dots \rightarrow P_k\
 > Vediamo una implicazione interessante nel capitolo sulle strategie di riduzione
 
 ## Bibliografia
-[Short Introduction to Functional Programming and Lambda-calculus](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm) by Franco Barbanera
+- [Short Introduction to Functional Programming and Lambda-calculus](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm) by Franco Barbanera

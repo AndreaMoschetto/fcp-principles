@@ -48,3 +48,6 @@ Vediamo un esempio di funzione che prende come argomento questo albero e restitu
 sumT EmptyT = 0
 sumT (MkT n bt1 bt2) = n + (sumT bt1) + (sumT bt2)
 ```
+
+## Bibliografia
+- [Notes on Data Types in Haskell](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/NotesTypesHASK.htm) by Franco Barbanera

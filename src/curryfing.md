@@ -43,4 +43,7 @@ Quando parliamo di funzioni che prendono come argomento o restituiscono altre fu
 > ``` atzero f = f 0 ```  
 > Oppure la funzione compose che prende due funzioni (sempre in versione curryficata) e ne restituisce la composizione  
 >  ``` compose f g = f g ```  
-> 
+
+## Bibliografia
+- [Computazioni, Programmazione funzionale e Preludio al λ-calcolo](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/preludioLambda.pdf) by Franco Barbanera
+- [Short Introduction to Functional Programming and Lambda-calculus](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm) by Franco Barbanera
