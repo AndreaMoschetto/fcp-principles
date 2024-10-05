@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Strategie di riduzione - Functional and Concurrent Programming Principles</title>
+        <title>Rappresentare funzioni ricorsive - Functional and Concurrent Programming Principles</title>
                 
 
         <!-- Custom HTML head -->
@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><a href="curryfing.html"><strong aria-hidden="true">2.</strong> Curryficazione</a></li><li class="chapter-item expanded "><a href="rappresentation.html"><strong aria-hidden="true">3.</strong> Rappresentazione di oggetti</a></li><li class="chapter-item expanded affix "><li class="part-title">Lambda-Calcolo</li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">4.</strong> Ripasso sul lambda calcolo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reduction.html" class="active"><strong aria-hidden="true">4.1.</strong> Strategie di riduzione</a></li><li class="chapter-item expanded "><a href="fixedpoint.html"><strong aria-hidden="true">4.2.</strong> Rappresentare funzioni ricorsive</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Teorema di Confluenza</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Tipi come specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Principal pair</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sistemi concorrenti</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Programmazione concorrente</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> SePi</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Proprietà dei sistemi concorrenti</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Model checking</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Teorema di Knaster Tarsky</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Strong Bisimulation</div></li><li class="chapter-item expanded affix "><li class="part-title">Cenni conclusivi</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Programmazione Distribuita</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Reti di Petri</div></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="disclaimer.html">Disclaimer</a></li><li class="chapter-item expanded affix "><li class="part-title">Appunti</li><li class="chapter-item expanded "><a href="recursion.html"><strong aria-hidden="true">1.</strong> Definizione ricorsiva sui naturali</a></li><li class="chapter-item expanded "><a href="curryfing.html"><strong aria-hidden="true">2.</strong> Curryficazione</a></li><li class="chapter-item expanded "><a href="rappresentation.html"><strong aria-hidden="true">3.</strong> Rappresentazione di oggetti</a></li><li class="chapter-item expanded affix "><li class="part-title">Lambda-Calcolo</li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">4.</strong> Ripasso sul lambda calcolo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reduction.html"><strong aria-hidden="true">4.1.</strong> Strategie di riduzione</a></li><li class="chapter-item expanded "><a href="fixedpoint.html" class="active"><strong aria-hidden="true">4.2.</strong> Rappresentare funzioni ricorsive</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Teorema di Confluenza</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> Tipi come specifiche parziali</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Principal pair</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sistemi concorrenti</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Programmazione concorrente</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Erlang</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Phi-Calcolo</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Session types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.4.</strong> SePi</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Proprietà dei sistemi concorrenti</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Model checking</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Teorema di Knaster Tarsky</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Strong Bisimulation</div></li><li class="chapter-item expanded affix "><li class="part-title">Cenni conclusivi</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Programmazione Distribuita</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Reti di Petri</div></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -145,62 +145,77 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="strategie-di-riduzione"><a class="header" href="#strategie-di-riduzione">Strategie di riduzione</a></h1>
-<p>Possiamo vedere una strategia di riduzione come una regola che disciplina la scelta di quale \(\beta\)-redex ridurre prima e quale dopo.
-Ogni linguaggio di programmazione funzionale può essere caratterizzato da una strategia di riduzione differente.
-Possiamo individuare due macro-famiglie: <strong>call-by-value</strong> e <strong>call-by-name</strong></p>
-<h2 id="call-by-value"><a class="header" href="#call-by-value">Call-by-value</a></h2>
-<p>Questa strategia prevede che un \(\beta\)-redex possa essere ridotto solo se il suo argomento è un <em>valore</em>.
-Non ci curiamo adesso di definire cosa sia un <em>valore</em> proprio per mantenere un certo grado di genericità.
-Ponendo ad esempio per <em>valore</em> un qualunque termine in forma normale, possiamo dire che nel seguente termine:<br />
-\[
-((\lambda x.x)((\underline{\lambda y.y)z})) (\lambda x.xx)(\lambda z.z)
-\]
-ridurre con una strategia call-by-value significa scegliere per primo il termine sottolineato, perchè è l'unico in forma normale.</p>
+                        <h1 id="rappresentare-funzioni-ricorsive"><a class="header" href="#rappresentare-funzioni-ricorsive">Rappresentare funzioni ricorsive</a></h1>
+<p>Chi non ha mai avuto a che fare con un modello computazionale funzionale, pensa che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.<br />
+Ad esempio la funzione fattoriale </p>
+<p>\[
+fact(n)=
+\begin{cases}
+1 &amp; \text{se } n = 0 \\
+fact(n-1) &amp; \text{se } n &gt; 0
+\end{cases}<br />
+\]<br />
+In Haskell viene rappresentata così:</p>
+<pre><code>    fact 0 = 1
+    fact n = n * fact n-1
+</code></pre>
+<p>Il lambda calcolo non dispone di nessuna primitiva che ci consenta di fare questo.<br />
+Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto di <strong>punto fisso</strong>.</p>
 <blockquote>
-<p>N.B.
-Sottolineo ancora che la definizione di valore può essere diversa in base al linguaggio.<br />
-Scheme (un famoso linguaggio funzionale), ad esempio, considera anche una funzione come un valore.</p>
+<p><strong>Punto fisso</strong><br />
+Il punto fisso di una funzione \(F: D \rightarrow D\) è quell'elemento \(d \in D\) tale che<br />
+\[F(d)=d\]</p>
 </blockquote>
-<h2 id="call-by-name"><a class="header" href="#call-by-name">Call-by-name</a></h2>
-<p>Questa famiglia racchiude tutte le altre strategie, ovvero quelle che riducono un \(\beta\)-redex senza controllare se il suo argomento sia un valore o no.<br />
-Due note strategie call-by-name sono:</p>
+<p>Nel lambda-calcolo chiamiamo \(Y\) <em>l'operatore di punto fisso</em>. Ovvero il termine così definito:<br />
+\[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\]<br />
+Esso rappresenta una funzione che si definisce in termini di se stessa<br />
+(si noti la similarità col termine \(\Omega\) visto nella sezione sulle <a href="./reduction.html">strategie di riduzione</a>)</p>
+<p>Per rappresentare la funzione fattoriale nel lambda calcolo possiamo didatticamente immaginare tre passaggi:</p>
+<ol>
+<li>Rappresentiamo la funzione in una maniera intuitiva esplicitandone il nome:<br />
+\[\text{fact = }\lambda \text{x. if(x=0) then 1 else (x*fact(x-1))}\]</li>
+<li>Sostituiamo il nome della funzione con una astrazione funzionale:<br />
+\[\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)}\]</li>
+<li>Applichiamo l'operatore di punto fisso alla funzione:<br />
+\[Y(\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)})\]</li>
+</ol>
+<blockquote>
+<p>Durante la valutazione di questo termine è importante tenere a mente che \(Y(F) = F(Y(F))\)</p>
+</blockquote>
+<h2 id="esempio-valutazione-lambda-termine-con-punto-fisso"><a class="header" href="#esempio-valutazione-lambda-termine-con-punto-fisso">Esempio valutazione lambda termine con punto fisso</a></h2>
+<blockquote>
+<p><strong>Fibonacci 3</strong><br />
+Questo esempio mostra una valutazione del lambda-termine che rappresenta il fattoriale di 3</p>
+<p><strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 3</p>
+<p>applico l'operatore di punto fisso<br />
+\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1))) <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 3</p>
+<p>adesso applico la nuova funzione alla prima sostituendo \(\lambda\)f con Y(se stessa)<br />
+(\(\lambda\)n.if(= n 0)1(mult n <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus n 1))) 3</p>
+<p>applico la costante 3 sostituendola al \(\lambda\)n<br />
+if(= 3 0)1(mult 3 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus 3 1))</p>
+<p>risolvo le valutazioni della funzione più esterna (quindi l'if a sinistra e il minus più a destra)<br />
+mult 3 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 2</p>
+<p>ora reitero i passaggi precedenti<br />
+mult 3 if(= 2 0)1(mult 2 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus 2 1))</p>
+<p>mult 3 mult 2 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 1</p>
+<p>mult 3 mult 2 if(= 2 0)1(mult 2 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus 1 1))</p>
+<p>mult 3 mult 2 mult 1 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 0</p>
+<p>mult 3 mult 2 mult 1 1</p>
+<p>6</p>
+</blockquote>
+<h2 id="bibliografia"><a class="header" href="#bibliografia">Bibliografia</a></h2>
 <ul>
-<li><strong>lazy strategy</strong> (chiamate anche <strong>call-by-need</strong>): che riducono un redex solo se strettamente necessario per valutare il valore finale;</li>
-<li><strong>leftmost-outermost</strong> (chiamate anche <strong>normal order</strong>): che come dice il nome provano a ridurre per primo il \(\beta\)-redex più esterno e più a sinistra.</li>
+<li><a href="https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm">Short Introduction to Functional Programming and Lambda-calculus</a> by Franco Barbanera</li>
 </ul>
-<blockquote>
-<p><strong>Esempio di normal order strategy</strong>
-se consideriamo il termine:
-\[(\underline{(\lambda x.x)\lambda y.yy})((\lambda x.xx)z)\]
-una strategia normal order ridurrà per primo il termine sottolineato proprio perchè è tra i più esterni quello più a sinistra.</p>
-</blockquote>
-<h2 id="confronto-tra-strategie"><a class="header" href="#confronto-tra-strategie">Confronto tra strategie</a></h2>
-<p>Avevo detto che il nostro termine \(\Omega\) sarebbe servito.<br />
-Se un termine ha una forma normale ma è anche possibile ridurlo un numero infinito di volte, significa che possiede un sottotermine che non ha una forma normale. Ad esempio il termine<br />
-\[(\lambda x.z)\Omega\]
-Notiamo che, dato che \(\Omega\) riduce sempre in se stesso, solo una strategia che lo tratti &quot;per intero&quot; senza ridurlo potrà &quot;eliminarlo&quot; ottenendo:
-\[(\lambda x.z)\Omega \rightarrow z\]
-Fare questo significa usare una strategia call-by-name.<br />
-Se invece tentassimo di ridurre prima il termine \(\Omega\) per poi (immaginandolo possibile) applicarvi la funzione a sinistra, otterremmo una sequenza infinita del tipo:
-\[(\lambda x.z)\Omega \rightarrow (\lambda x.z)\Omega \rightarrow \dots\]
-Fare questo significa usare un strategia call-by-value.<br />
-In conclusione possiamo dire che seppur una call-by-name possa metterci un numero di riduzioni maggiore di una call-by-value a raggiungere una forma normale (ammesso che esista), essa ci garantisce sempre che venga raggiunta.
-Mentre invece, una sequenza di riduzioni call-by-value potrebbe raggiungere una forma normale più rapidamente come potrebbe divergere all'infinito senza mai trovarla.</p>
-<h2 id="teorema-di-standardizzazione"><a class="header" href="#teorema-di-standardizzazione">Teorema di Standardizzazione</a></h2>
-<p>Se un termine ha una forma normale essa sarà sempre raggiunta con una strategia di riduzione normal order.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="lambda.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="reduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="fixedpoint.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -208,13 +223,10 @@ Mentre invece, una sequenza di riduzioni call-by-value potrebbe raggiungere una 
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="lambda.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="reduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="fixedpoint.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                             </nav>
 
         </div>
