@@ -37,7 +37,7 @@ Per rappresentare la funzione fattoriale nel lambda calcolo possiamo didatticame
 > Durante la valutazione di questo termine è importante tenere a mente che \\(Y(F) = F(Y(F))\\)
 
 ## Esempio valutazione lambda termine con punto fisso
->**Fibonacci 3**  
+>**Fattoriale di 3**  
 >Questo esempio mostra una valutazione del lambda-termine che rappresenta il fattoriale di 3  
 >  
 >**Y**(\\(\lambda\\)f.(\\(\lambda\\)n.if(= n 0)1(mult n f(minus n 1)))) 3  
