@@ -1,6 +1,6 @@
 # Rappresentare funzioni ricorsive
-Chi non ha mai avuto a che fare con un modello computazionale funzionale, pensa che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.  
-Ad esempio la funzione fattoriale 
+Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.  
+Consideriamo ad esempio la funzione fattoriale 
 
 \\[
     fact(n)=
@@ -14,11 +14,12 @@ In Haskell viene rappresentata così:
     fact 0 = 1
     fact n = n * fact n-1
 ```  
+La definizione è possibile grazie al fatto che alla funzione viene attribuito un nome.
 Il lambda calcolo non dispone di nessuna primitiva che ci consenta di fare questo.  
 Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto di **punto fisso**.
-
-> **Punto fisso**  
-> Il punto fisso di una funzione \\(F: D \rightarrow D\\) è quell'elemento \\(d \in D\\) tale che  
+## Punto fisso
+ 
+> Il punto fisso di una generica funzione \\(F: D \rightarrow D\\) è quell'elemento \\(d \in D\\) tale che  
 > \\[F(d)=d\\]
   
 Nel lambda-calcolo chiamiamo \\(Y\\) *l'operatore di punto fisso*. Ovvero il termine così definito:  
@@ -29,9 +30,9 @@ Esso rappresenta una funzione che si definisce in termini di se stessa
 Per rappresentare la funzione fattoriale nel lambda calcolo possiamo didatticamente immaginare tre passaggi:
 1. Rappresentiamo la funzione in una maniera intuitiva esplicitandone il nome:  
   \\[\text{fact = }\lambda \text{x. if(x=0) then 1 else (x*fact(x-1))}\\]
-2. Sostituiamo il nome della funzione con una astrazione funzionale:  
+1. Sostituiamo il nome della funzione con una astrazione funzionale:  
   \\[\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)}\\]
-3. Applichiamo l'operatore di punto fisso alla funzione:  
+1. Applichiamo l'operatore di punto fisso alla funzione:  
   \\[Y(\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)})\\]
 > Durante la valutazione di questo termine è importante tenere a mente che \\(Y(F) = F(Y(F))\\)
 
