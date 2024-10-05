@@ -146,8 +146,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="rappresentare-funzioni-ricorsive"><a class="header" href="#rappresentare-funzioni-ricorsive">Rappresentare funzioni ricorsive</a></h1>
-<p>Chi non ha mai avuto a che fare con un modello computazionale funzionale, pensa che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.<br />
-Ad esempio la funzione fattoriale </p>
+<p>Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.<br />
+Consideriamo ad esempio la funzione fattoriale </p>
 <p>\[
 fact(n)=
 \begin{cases}
@@ -159,11 +159,12 @@ In Haskell viene rappresentata così:</p>
 <pre><code>    fact 0 = 1
     fact n = n * fact n-1
 </code></pre>
-<p>Il lambda calcolo non dispone di nessuna primitiva che ci consenta di fare questo.<br />
+<p>La definizione è possibile grazie al fatto che alla funzione viene attribuito un nome.
+Il lambda calcolo non dispone di nessuna primitiva che ci consenta di fare questo.<br />
 Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto di <strong>punto fisso</strong>.</p>
+<h2 id="punto-fisso"><a class="header" href="#punto-fisso">Punto fisso</a></h2>
 <blockquote>
-<p><strong>Punto fisso</strong><br />
-Il punto fisso di una funzione \(F: D \rightarrow D\) è quell'elemento \(d \in D\) tale che<br />
+<p>Il punto fisso di una generica funzione \(F: D \rightarrow D\) è quell'elemento \(d \in D\) tale che<br />
 \[F(d)=d\]</p>
 </blockquote>
 <p>Nel lambda-calcolo chiamiamo \(Y\) <em>l'operatore di punto fisso</em>. Ovvero il termine così definito:<br />
