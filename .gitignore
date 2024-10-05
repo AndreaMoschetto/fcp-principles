@@ -1,2 +1,3 @@
 book
 *.beam
+*.DS_Store
