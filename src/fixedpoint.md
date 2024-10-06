@@ -48,7 +48,8 @@ Dimostriamo che \\(N\\) è un puntofisso di F nel seguente modo:
 
 Il termine \\(Y\\) viene chiamato **operatore di punto fisso** e permette di trovare il punto fisso di una termine semplicemente applicandolo allo stesso.  
 > Esistono molteplici operatori di punto fisso: di Kleene, di Tarsky, di Turing, di Church (quello utilizzato sopra), ecc.
-> Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.
+> Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.  
+> Consiglio la lettura della [dimostrazione](pag.21)(https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf) del medesimo teorema utilizzando l'operatore di punto fisso di Turing.
   
 Vediamo come applicare questo concetto alla definizione di fattoriale attraverso i seguenti passaggi:
 \\[
@@ -75,14 +76,14 @@ Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta 
 
 ## Esempio valutazione lambda termine con punto fisso
 >**Fattoriale di 3**  
->Questo esempio mostra una valutazione del lambda-termine che rappresenta il fattoriale di 3  
+>Questo esempio mostra in maniera più esplicita possibile il lavoro che svolge l'operatore di punto fisso su una valutazione del lambda-termine che rappresenta il fattoriale di 3  
 >  
 >**Y**(\\(\lambda\\)f.(\\(\lambda\\)n.if(= n 0)1(mult n f(minus n 1)))) 3  
 >  
 >applico l'operatore di punto fisso  
 >\\(\lambda\\)f.(\\(\lambda\\)n.if(= n 0)1(mult n f(minus n 1))) **Y**(\\(\lambda\\)f.(\\(\lambda\\)n.if(= n 0)1(mult n f(minus n 1)))) 3  
 >  
->adesso applico la nuova funzione alla prima sostituendo \\(\lambda\\)f con Y(se stessa)  
+>adesso applico la nuova funzione alla prima sostituendo \\(\lambda\\)f con Y(F)  
 >(\\(\lambda\\)n.if(= n 0)1(mult n **Y**(\\(\lambda\\)f.(\\(\lambda\\)n.if(= n 0)1(mult n f(minus n 1)))) (minus n 1))) 3  
 >  
 >applico la costante 3 sostituendola al \\(\lambda\\)n  
@@ -106,3 +107,4 @@ Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta 
 
 ## Bibliografia
 - [Short Introduction to Functional Programming and Lambda-calculus](https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm) by Franco Barbanera
+- [Lecture Notes on the Lambda Calculus](https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf) by Peter Selinger
