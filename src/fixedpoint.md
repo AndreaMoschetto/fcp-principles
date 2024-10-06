@@ -26,14 +26,14 @@ Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto
 > Invece la funzione \\(f(x)=x+1\\) non ne ha.
   
 Trasportando la nozione di punto fisso nel lambda calcolo possiamo dire che se \\(F\\) e \\(N\\) sono lambda termini, 
-si dice che se \\(N\\) è un punto fisso di \\(F\\) se \\(F N =_\beta N\\)
+si dice che \\(N\\) è un punto fisso di \\(F\\) se \\(F N =_\beta N\\)
 ### Teorema
 Nel lambda calcolo non tipato ogni termine F ha un punto fisso.
 
 **Dimostrazione**  
 Sia \\(Y\\) un particolare lambda termine così definito  
 \\[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\\]  
-supponiamo che \\(F\\) sia un generico lambda termine e chiamiamo \\(N = YF\\).  
+supponiamo che \\(F\\) sia un generico lambda termine e poniamo \\(N = YF\\).  
 Dimostriamo che \\(N\\) è un puntofisso di F nel seguente modo:
 \\[
     \begin{align}
@@ -63,8 +63,9 @@ Se adesso chiamiamo \\(F\\) il termine:
 \\[\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\\]  
 otteniamo:  
 \\[\textbf{fact} = F \textbf{ fact}\\]  
-Il problema si riduce una equazione di punto fisso: trovare **fact**, in quanto punto fisso del termine F.  
-Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono essere agilmente risolti ponendo:  
+Il problema si riduce ad un'equazione di punto fisso: trovare **fact**, cioè il punto fisso di F.  
+Ormai abbiamo capito che questo problema viene risolto da operatori come **Y**.  
+Poniamo 
 \\[
 \begin{align}
 \textbf{fact} &= \textbf{Y } F\\\\
@@ -72,7 +73,7 @@ Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono ess
 \end{align}  
 \\]
 
-Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta perfettamente la funzione fattoriale.
+Adesso al secondo membro troviamo un termine chiuso che rappresenta perfettamente la funzione fattoriale.
 
 ## Esempio valutazione lambda termine con punto fisso
 >**Fattoriale di 3**  
