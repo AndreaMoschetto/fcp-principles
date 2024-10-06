@@ -6,7 +6,7 @@ Consideriamo ad esempio la funzione fattoriale
     fact(n)=
     \begin{cases}
     1 & \text{se } n = 0 \\\\
-    fact(n-1) & \text{se } n > 0
+    n*fact(n-1) & \text{se } n > 0
     \end{cases}    
 \\]  
 In Haskell viene rappresentata così:  
