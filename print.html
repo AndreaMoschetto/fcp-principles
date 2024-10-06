@@ -446,13 +446,13 @@ Ad esempio la funzione \(f(x)=x^2\) ha due punti fissi: 0 e 1.
 Invece la funzione \(f(x)=x+1\) non ne ha.</p>
 </blockquote>
 <p>Trasportando la nozione di punto fisso nel lambda calcolo possiamo dire che se \(F\) e \(N\) sono lambda termini, 
-si dice che se \(N\) è un punto fisso di \(F\) se \(F N =_\beta N\)</p>
+si dice che \(N\) è un punto fisso di \(F\) se \(F N =_\beta N\)</p>
 <h3 id="teorema"><a class="header" href="#teorema">Teorema</a></h3>
 <p>Nel lambda calcolo non tipato ogni termine F ha un punto fisso.</p>
 <p><strong>Dimostrazione</strong><br />
 Sia \(Y\) un particolare lambda termine così definito<br />
 \[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\]<br />
-supponiamo che \(F\) sia un generico lambda termine e chiamiamo \(N = YF\).<br />
+supponiamo che \(F\) sia un generico lambda termine e poniamo \(N = YF\).<br />
 Dimostriamo che \(N\) è un puntofisso di F nel seguente modo:
 \[
 \begin{align}
@@ -482,15 +482,16 @@ Se adesso chiamiamo \(F\) il termine:
 \[\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\]<br />
 otteniamo:<br />
 \[\textbf{fact} = F \textbf{ fact}\]<br />
-Il problema si riduce una equazione di punto fisso: trovare <strong>fact</strong>, in quanto punto fisso del termine F.<br />
-Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono essere agilmente risolti ponendo:<br />
+Il problema si riduce ad un'equazione di punto fisso: trovare <strong>fact</strong>, cioè il punto fisso di F.<br />
+Ormai abbiamo capito che questo problema viene risolto da operatori come <strong>Y</strong>.<br />
+Poniamo 
 \[
 \begin{align}
 \textbf{fact} &amp;= \textbf{Y } F\\
 &amp;=\textbf{Y }\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}
 \end{align}<br />
 \]</p>
-<p>Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta perfettamente la funzione fattoriale.</p>
+<p>Adesso al secondo membro troviamo un termine chiuso che rappresenta perfettamente la funzione fattoriale.</p>
 <h2 id="esempio-valutazione-lambda-termine-con-punto-fisso"><a class="header" href="#esempio-valutazione-lambda-termine-con-punto-fisso">Esempio valutazione lambda termine con punto fisso</a></h2>
 <blockquote>
 <p><strong>Fattoriale di 3</strong><br />
