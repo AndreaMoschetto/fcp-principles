@@ -49,7 +49,7 @@ Dimostriamo che \\(N\\) è un puntofisso di F nel seguente modo:
 Il termine \\(Y\\) viene chiamato **operatore di punto fisso** e permette di trovare il punto fisso di una termine semplicemente applicandolo allo stesso.  
 > Esistono molteplici operatori di punto fisso: di Kleene, di Tarsky, di Turing, di Church (quello utilizzato sopra), ecc.
 > Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.  
-> Consiglio la lettura della [dimostrazione](pag.21)(https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf) del medesimo teorema utilizzando l'operatore di punto fisso di Turing.
+> Consiglio la lettura della [dimostrazione](https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf)(pag.21)del medesimo teorema utilizzando l'operatore di punto fisso di Turing.
   
 Vediamo come applicare questo concetto alla definizione di fattoriale attraverso i seguenti passaggi:
 \\[
