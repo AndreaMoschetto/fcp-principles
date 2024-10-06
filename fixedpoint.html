@@ -165,24 +165,56 @@ Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto
 <h2 id="punto-fisso"><a class="header" href="#punto-fisso">Punto fisso</a></h2>
 <blockquote>
 <p>Il punto fisso di una generica funzione \(F: D \rightarrow D\) è quell'elemento \(d \in D\) tale che<br />
-\[F(d)=d\]</p>
+\[F(d)=d\]
+In aritmetica non tutte le funzioni dispongono di punti fissi.<br />
+Ad esempio la funzione \(f(x)=x^2\) ha due punti fissi: 0 e 1.
+Invece la funzione \(f(x)=x+1\) non ne ha.</p>
 </blockquote>
-<p>Nel lambda-calcolo chiamiamo \(Y\) <em>l'operatore di punto fisso</em>. Ovvero il termine così definito:<br />
+<p>Trasportando la nozione di punto fisso nel lambda calcolo possiamo dire che se \(F\) e \(N\) sono lambda termini, 
+si dice che se \(N\) è un punto fisso di \(F\) se \(F N =_\beta N\)</p>
+<h3 id="teorema"><a class="header" href="#teorema">Teorema</a></h3>
+<p>Nel lambda calcolo non tipato ogni termine F ha un punto fisso.</p>
+<p><strong>Dimostrazione</strong><br />
+Sia \(Y\) un particolare lambda termine così definito<br />
 \[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\]<br />
-Esso rappresenta una funzione che si definisce in termini di se stessa<br />
-(si noti la similarità col termine \(\Omega\) visto nella sezione sulle <a href="./reduction.html">strategie di riduzione</a>)</p>
-<p>Per rappresentare la funzione fattoriale nel lambda calcolo possiamo didatticamente immaginare tre passaggi:</p>
-<ol>
-<li>Rappresentiamo la funzione in una maniera intuitiva esplicitandone il nome:<br />
-\[\text{fact = }\lambda \text{x. if(x=0) then 1 else (x*fact(x-1))}\]</li>
-<li>Sostituiamo il nome della funzione con una astrazione funzionale:<br />
-\[\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)}\]</li>
-<li>Applichiamo l'operatore di punto fisso alla funzione:<br />
-\[Y(\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)})\]</li>
-</ol>
+supponiamo che \(F\) sia un generico lambda termine e chiamiamo \(N = YF\).<br />
+Dimostriamo che \(N\) è un puntofisso di F nel seguente modo:
+\[
+\begin{align}
+N &amp;= YF\\
+&amp;= \lambda f.(\lambda x. f(xx))(\lambda x. f(xx))F\\
+&amp;= (\lambda x. F(xx))(\lambda x. F(xx))\\
+&amp;\twoheadrightarrow F((\lambda x. F(xx))(\lambda x. F(xx)))\\
+&amp;= F(YF)\\
+&amp;= F(N)
+\end{align}
+\]\[\qquad \qquad \qquad \qquad \qquad \qquad \blacksquare\]</p>
+<p>Il termine \(Y\) viene chiamato <strong>operatore di punto fisso</strong> e permette di trovare il punto fisso di una termine semplicemente applicandolo allo stesso.</p>
 <blockquote>
-<p>Durante la valutazione di questo termine è importante tenere a mente che \(Y(F) = F(Y(F))\)</p>
+<p>Esistono molteplici operatori di punto fisso: di Kleene, di Tarsky, di Turing, di Church (quello utilizzato sopra), ecc.
+Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.</p>
 </blockquote>
+<p>Vediamo come applicare questo concetto alla definizione di fattoriale attraverso i seguenti passaggi:
+\[
+\begin{align}
+\textbf{fact }\text{n} &amp;= \text{if_then_else(iszero n)(1) (mult (n }\textbf{fact}\text{(pred n)))}\\
+\textbf{fact} &amp;= \lambda n. \text{if_then_else(iszero n)(1) (mult (n fact(pred n)))}\\
+\textbf{fact} &amp;= \lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\textbf{fact}\\
+\end{align}
+\]
+Se adesso chiamiamo \(F\) il termine:
+\[\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\]<br />
+otteniamo:<br />
+\[\textbf{fact} = F \textbf{ fact}\]<br />
+Il problema si riduce una equazione di punto fisso: trovare <strong>fact</strong>, in quanto punto fisso del termine F.<br />
+Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono essere agilmente risolti ponendo:<br />
+\[
+\begin{align}
+\textbf{fact} &amp;= \textbf{Y } F\\
+&amp;=\textbf{Y }\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}
+\end{align}<br />
+\]</p>
+<p>Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta perfettamente la funzione fattoriale.</p>
 <h2 id="esempio-valutazione-lambda-termine-con-punto-fisso"><a class="header" href="#esempio-valutazione-lambda-termine-con-punto-fisso">Esempio valutazione lambda termine con punto fisso</a></h2>
 <blockquote>
 <p><strong>Fattoriale di 3</strong><br />
