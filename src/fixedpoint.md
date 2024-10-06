@@ -21,20 +21,57 @@ Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto
  
 > Il punto fisso di una generica funzione \\(F: D \rightarrow D\\) è quell'elemento \\(d \in D\\) tale che  
 > \\[F(d)=d\\]
+> In aritmetica non tutte le funzioni dispongono di punti fissi.  
+> Ad esempio la funzione \\(f(x)=x^2\\) ha due punti fissi: 0 e 1.
+> Invece la funzione \\(f(x)=x+1\\) non ne ha.
   
-Nel lambda-calcolo chiamiamo \\(Y\\) *l'operatore di punto fisso*. Ovvero il termine così definito:  
-\\[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\\]  
-Esso rappresenta una funzione che si definisce in termini di se stessa  
-(si noti la similarità col termine \\(\Omega\\) visto nella sezione sulle [strategie di riduzione](./reduction.md))  
+Trasportando la nozione di punto fisso nel lambda calcolo possiamo dire che se \\(F\\) e \\(N\\) sono lambda termini, 
+si dice che se \\(N\\) è un punto fisso di \\(F\\) se \\(F N =_\beta N\\)
+### Teorema
+Nel lambda calcolo non tipato ogni termine F ha un punto fisso.
 
-Per rappresentare la funzione fattoriale nel lambda calcolo possiamo didatticamente immaginare tre passaggi:
-1. Rappresentiamo la funzione in una maniera intuitiva esplicitandone il nome:  
-  \\[\text{fact = }\lambda \text{x. if(x=0) then 1 else (x*fact(x-1))}\\]
-1. Sostituiamo il nome della funzione con una astrazione funzionale:  
-  \\[\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)}\\]
-1. Applichiamo l'operatore di punto fisso alla funzione:  
-  \\[Y(\lambda f.\lambda \text{x. if(x=0) then 1 else x*}\lambda f.\text{(x-1)})\\]
-> Durante la valutazione di questo termine è importante tenere a mente che \\(Y(F) = F(Y(F))\\)
+**Dimostrazione**  
+Sia \\(Y\\) un particolare lambda termine così definito  
+\\[\lambda f.(\lambda x. f(xx))(\lambda x. f(xx))\\]  
+supponiamo che \\(F\\) sia un generico lambda termine e chiamiamo \\(N = YF\\).  
+Dimostriamo che \\(N\\) è un puntofisso di F nel seguente modo:
+\\[
+    \begin{align}
+    N &= YF\\\\
+    &= \lambda f.(\lambda x. f(xx))(\lambda x. f(xx))F\\\\
+    &= (\lambda x. F(xx))(\lambda x. F(xx))\\\\
+    &\twoheadrightarrow F((\lambda x. F(xx))(\lambda x. F(xx)))\\\\
+    &= F(YF)\\\\
+    &= F(N)
+    \end{align}
+\\]\\[\qquad \qquad \qquad \qquad \qquad \qquad \blacksquare\\]
+
+Il termine \\(Y\\) viene chiamato **operatore di punto fisso** e permette di trovare il punto fisso di una termine semplicemente applicandolo allo stesso.  
+> Esistono molteplici operatori di punto fisso: di Kleene, di Tarsky, di Turing, di Church (quello utilizzato sopra), ecc.
+> Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.
+  
+Vediamo come applicare questo concetto alla definizione di fattoriale attraverso i seguenti passaggi:
+\\[
+  \begin{align}
+  \textbf{fact }\text{n} &= \text{if_then_else(iszero n)(1) (mult (n }\textbf{fact}\text{(pred n)))}\\\\
+  \textbf{fact} &= \lambda n. \text{if_then_else(iszero n)(1) (mult (n fact(pred n)))}\\\\
+  \textbf{fact} &= \lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\textbf{fact}\\\\
+  \end{align}
+\\]
+Se adesso chiamiamo \\(F\\) il termine:
+\\[\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}\\]  
+otteniamo:  
+\\[\textbf{fact} = F \textbf{ fact}\\]  
+Il problema si riduce una equazione di punto fisso: trovare **fact**, in quanto punto fisso del termine F.  
+Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono essere agilmente risolti ponendo:  
+\\[
+\begin{align}
+\textbf{fact} &= \textbf{Y } F\\\\
+&=\textbf{Y }\lambda f. \lambda n. \text{if_then_else(iszero n)(1) (mult (n f(pred n)))}
+\end{align}  
+\\]
+
+Adesso il lambda termine al secondo membro è un termine chiuso che rappresenta perfettamente la funzione fattoriale.
 
 ## Esempio valutazione lambda termine con punto fisso
 >**Fattoriale di 3**  
