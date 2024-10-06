@@ -1,5 +1,5 @@
 # Rappresentare funzioni ricorsive
-Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle variabili per rappresentare una funzione ricorsiva.  
+Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle funzioni per rappresentare una funzione ricorsiva.  
 Consideriamo ad esempio la funzione fattoriale 
 
 \\[
