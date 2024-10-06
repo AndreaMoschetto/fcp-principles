@@ -467,7 +467,8 @@ N &amp;= YF\\
 <p>Il termine \(Y\) viene chiamato <strong>operatore di punto fisso</strong> e permette di trovare il punto fisso di una termine semplicemente applicandolo allo stesso.</p>
 <blockquote>
 <p>Esistono molteplici operatori di punto fisso: di Kleene, di Tarsky, di Turing, di Church (quello utilizzato sopra), ecc.
-Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.</p>
+Ognuno è rappresentato in maniera diversa e risponde ad esigenze diverse funziona meglio con strategie di valutazione diverse.<br />
+Consiglio la lettura della <a href="pag.21">dimostrazione</a>(https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf) del medesimo teorema utilizzando l'operatore di punto fisso di Turing.</p>
 </blockquote>
 <p>Vediamo come applicare questo concetto alla definizione di fattoriale attraverso i seguenti passaggi:
 \[
@@ -493,11 +494,11 @@ Ormai abbiamo capito che questo genere di problemi in lambda calcolo possono ess
 <h2 id="esempio-valutazione-lambda-termine-con-punto-fisso"><a class="header" href="#esempio-valutazione-lambda-termine-con-punto-fisso">Esempio valutazione lambda termine con punto fisso</a></h2>
 <blockquote>
 <p><strong>Fattoriale di 3</strong><br />
-Questo esempio mostra una valutazione del lambda-termine che rappresenta il fattoriale di 3</p>
+Questo esempio mostra in maniera più esplicita possibile il lavoro che svolge l'operatore di punto fisso su una valutazione del lambda-termine che rappresenta il fattoriale di 3</p>
 <p><strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 3</p>
 <p>applico l'operatore di punto fisso<br />
 \(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1))) <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) 3</p>
-<p>adesso applico la nuova funzione alla prima sostituendo \(\lambda\)f con Y(se stessa)<br />
+<p>adesso applico la nuova funzione alla prima sostituendo \(\lambda\)f con Y(F)<br />
 (\(\lambda\)n.if(= n 0)1(mult n <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus n 1))) 3</p>
 <p>applico la costante 3 sostituendola al \(\lambda\)n<br />
 if(= 3 0)1(mult 3 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)1(mult n f(minus n 1)))) (minus 3 1))</p>
@@ -514,6 +515,7 @@ mult 3 if(= 2 0)1(mult 2 <strong>Y</strong>(\(\lambda\)f.(\(\lambda\)n.if(= n 0)
 <h2 id="bibliografia-3"><a class="header" href="#bibliografia-3">Bibliografia</a></h2>
 <ul>
 <li><a href="https://www.dmi.unict.it/barba/PRINC-FUN-CONC/PROGRAMMI-TESTI/READING-MATERIAL/ShortIntroFPprog-lang.htm">Short Introduction to Functional Programming and Lambda-calculus</a> by Franco Barbanera</li>
+<li><a href="https://www.dmi.unict.it/barba/FONDAMENTI/PROGRAMMI-TESTI/READING-MATERIAL/LAMBDA-CALCULUS/lambda-calculus.pdf">Lecture Notes on the Lambda Calculus</a> by Peter Selinger</li>
 </ul>
 
                     </main>
