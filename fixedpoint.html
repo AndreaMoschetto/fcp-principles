@@ -183,8 +183,8 @@ Dimostriamo che \(N\) è un puntofisso di F nel seguente modo:
 \begin{align}
 N &amp;= YF\\
 &amp;= \lambda f.(\lambda x. f(xx))(\lambda x. f(xx))F\\
-&amp;= (\lambda x. F(xx))(\lambda x. F(xx))\\
-&amp;\twoheadrightarrow F((\lambda x. F(xx))(\lambda x. F(xx)))\\
+&amp;\rightarrow (\lambda x. F(xx))(\lambda x. F(xx))\\
+&amp;\rightarrow F((\lambda x. F(xx))(\lambda x. F(xx)))\\
 &amp;= F(YF)\\
 &amp;= F(N)
 \end{align}
