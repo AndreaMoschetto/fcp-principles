@@ -9,7 +9,7 @@
 # Lambda-Calcolo
 - [Ripasso sul lambda calcolo](./lambda.md)
   - [Strategie di riduzione](./reduction.md)
-  - [Rappresentare funzioni ricorsive](./fixedpoint.md)
+  - [Ricorsione](./fixedpoint.md)
   - [Teorema di Confluenza]()
   - [Tipi come specifiche parziali]()
   - [Principal pair]()

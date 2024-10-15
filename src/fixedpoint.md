@@ -1,5 +1,5 @@
-# Rappresentare funzioni ricorsive
-Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle funzioni per rappresentare una funzione ricorsiva.  
+# Ricorsione
+Chi non ha mai avuto a che fare con questo modello computazionale penserà che per un linguaggio di programmazione sia necessario poter dare nomi alle funzioni per definire una funzione ricorsiva.  
 Consideriamo ad esempio la funzione fattoriale 
 
 \\[
@@ -16,7 +16,7 @@ In Haskell viene rappresentata così:
 ```  
 La definizione è possibile grazie al fatto che alla funzione viene attribuito un nome.
 Il lambda calcolo non dispone di nessuna primitiva che ci consenta di fare questo.  
-Nonostante ciò riusciamo a rappresentare queste funzioni attraverso il concetto di **punto fisso**.
+Nonostante ciò riusciamo a rappresentare algoritmi che calcolano queste funzioni attraverso il concetto di **punto fisso**.
 ## Punto fisso
  
 > Il punto fisso di una generica funzione \\(F: D \rightarrow D\\) è quell'elemento \\(d \in D\\) tale che  
